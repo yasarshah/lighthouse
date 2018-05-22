@@ -61,17 +61,32 @@ class ReportRenderer {
    */
   _renderReportHeader(report) {
     const header = this._dom.cloneTemplate('#tmpl-lh-heading', this._templateContext);
+    const scoreContainer = this._dom.cloneTemplate('#tmpl-lh-score-container', this._templateContext);
+    const toolbarEl = this._dom.find('.lh-toolbar', header);
+    /** @type {HTMLDivElement} */ (toolbarEl.parentNode).insertBefore(scoreContainer, toolbarEl);
+
     this._dom.find('.lh-config__timestamp', header).textContent =
         Util.formatDateTime(report.fetchTime);
     this._dom.find('.lh-product-info__version', header).textContent = report.lighthouseVersion;
-    const url = /** @type {HTMLAnchorElement} */ (this._dom.find('.lh-metadata__url', header));
+    const metadataUrl = /** @type {HTMLAnchorElement} */ (this._dom.find('.lh-metadata__url', header));
     const toolbarUrl = /** @type {HTMLAnchorElement}*/ (this._dom.find('.lh-toolbar__url', header));
-    url.href = url.textContent = toolbarUrl.href = toolbarUrl.textContent = report.finalUrl;
+    metadataUrl.href = metadataUrl.textContent = toolbarUrl.href = toolbarUrl.textContent = report.finalUrl;
 
     const emulationDescriptions = Util.getEmulationDescriptions(report.configSettings || {});
     this._dom.find('.lh-config__emulation', header).textContent = emulationDescriptions.summary;
     return header;
   }
+
+  /**
+   * @return {Element}
+   */
+  _renderReportShortHeader() {
+    const shortHeaderContainer = this._dom.createElement('div', 'lh-header-container');
+    const scoreContainer = this._dom.cloneTemplate('#tmpl-lh-score-container', this._templateContext);
+    shortHeaderContainer.appendChild(scoreContainer);
+    return shortHeaderContainer;
+  }
+
 
   /**
    * @param {ReportJSON} report
@@ -124,9 +139,17 @@ class ReportRenderer {
    * @return {DocumentFragment}
    */
   _renderReport(report) {
-    const headerStickyContainer = this._dom.createElement('div', 'lh-header-sticky');
-    headerStickyContainer.appendChild(this._renderReportHeader(report));
+    let headerStickyContainer;
+    // No header if it's devtools
+    if (this._dom.document().querySelector('.lh-devtools')) {
+      headerStickyContainer = this._dom.createElement('div', 'lh-header-nonsticky');
+      headerStickyContainer.appendChild(this._renderReportShortHeader());
+    } else {
+      headerStickyContainer = this._dom.createElement('div', 'lh-header-sticky');
+      headerStickyContainer.appendChild(this._renderReportHeader(report));
+    }
     const scoreContainer = this._dom.find('.lh-scores-container', headerStickyContainer);
+
 
     const container = this._dom.createElement('div', 'lh-container');
 
