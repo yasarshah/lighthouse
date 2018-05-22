@@ -93,8 +93,8 @@
   --caption-font-size: 11px;
   --caption-line-height: 14px;
   --default-padding: 12px;
-  --section-padding: 16px;
-  --section-indent: 16px;
+  --section-padding: 12px;
+  --section-indent: 8px;
   --audit-group-indent: 16px;
   --audit-indent: 16px;
   --expandable-indent: 16px;
