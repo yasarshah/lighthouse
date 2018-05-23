@@ -61,9 +61,6 @@ class ReportRenderer {
    */
   _renderReportHeader(report) {
     const header = this._dom.cloneTemplate('#tmpl-lh-heading', this._templateContext);
-    const scoreContainer = this._dom.cloneTemplate('#tmpl-lh-score-container', this._templateContext);
-    const toolbarEl = this._dom.find('.lh-toolbar', header);
-    /** @type {HTMLDivElement} */ (toolbarEl.parentNode).insertBefore(scoreContainer, toolbarEl);
 
     this._dom.find('.lh-config__timestamp', header).textContent =
         Util.formatDateTime(report.fetchTime);
@@ -78,13 +75,13 @@ class ReportRenderer {
   }
 
   /**
+   * @param {ReportJSON} report
    * @return {Element}
    */
   _renderReportShortHeader() {
-    const shortHeaderContainer = this._dom.createElement('div', 'lh-header-container');
-    const scoreContainer = this._dom.cloneTemplate('#tmpl-lh-score-container', this._templateContext);
-    shortHeaderContainer.appendChild(scoreContainer);
-    return shortHeaderContainer;
+    const header = this._dom.createElement('div', 'lh-header-container');
+    this._dom.createChildOf(header, 'div', 'lh-scores-wrapper-placeholder');
+    return header;
   }
 
 
@@ -139,63 +136,66 @@ class ReportRenderer {
    * @return {DocumentFragment}
    */
   _renderReport(report) {
-    let header;
-    const headerContainer = this._dom.createElement('div');
-    if (this._dom.isDevTools()) {
-      headerContainer.classList.add('lh-header-nonsticky');
-      header = this._renderReportShortHeader();
-    } else {
-      headerContainer.classList.add('lh-header-sticky');
-      header = this._renderReportHeader(report);
-    }
+    // Header
+    const header = this._dom.isDevTools() ? this._renderReportShortHeader() :
+        this._renderReportHeader(report);
+    const headerContainer = this._dom.createElement('div',
+        this._dom.isDevTools() ? 'lh-header-plain' : 'lh-header-sticky');
     headerContainer.appendChild(header);
-    const scoreContainer = this._dom.find('.lh-scores-container', headerContainer);
 
     const container = this._dom.createElement('div', 'lh-container');
-    const reportSection = container.appendChild(this._dom.createElement('div', 'lh-report'));
-
+    // Top-level Warnings
+    const reportSection = this._dom.createChildOf(container, 'div', 'lh-report');
     reportSection.appendChild(this._renderReportWarnings(report));
 
-    let scoreHeader;
-    const isSoloCategory = report.reportCategories.length === 1;
-    if (!isSoloCategory) {
-      scoreHeader = this._dom.createElement('div', 'lh-scores-header');
-    }
-
+    // Categories
+    const categoriesEl = reportSection.appendChild(this._dom.createElement('div', 'lh-categories'));
     const detailsRenderer = new DetailsRenderer(this._dom);
     const categoryRenderer = new CategoryRenderer(this._dom, detailsRenderer);
-    categoryRenderer.setTemplateContext(this._templateContext);
     const perfCategoryRenderer = new PerformanceCategoryRenderer(this._dom, detailsRenderer);
+    categoryRenderer.setTemplateContext(this._templateContext);
     perfCategoryRenderer.setTemplateContext(this._templateContext);
 
-    const categories = reportSection.appendChild(this._dom.createElement('div', 'lh-categories'));
+    const hasMultipleCategories = report.reportCategories.length > 1;
+    if (!hasMultipleCategories) {
+      for (const category of report.reportCategories) {
+        categoriesEl.appendChild(renderReportCategory(category));
+      }
+    } else {
+      const domFragment = this._dom.cloneTemplate('#tmpl-lh-score-wrapper', this._templateContext);
+      const scoresContainer = this._dom.find('.lh-scores-container', domFragment);
+      const placeholder = this._dom.find('.lh-scores-wrapper-placeholder', headerContainer);
+      placeholder.parentNode.replaceChild(domFragment, placeholder);
 
-    for (const category of report.reportCategories) {
-      if (scoreHeader) {
+      const scoreHeader = this._dom.createChildOf(scoresContainer, 'div', 'lh-scores-header');
+      for (const category of report.reportCategories) {
+        // Category score gauge
         scoreHeader.appendChild(categoryRenderer.renderScoreGauge(category));
+        // Category sections
+        categoriesEl.appendChild(renderReportCategory(category));
       }
-
-      let renderer = categoryRenderer;
-      if (category.id === 'performance') {
-        renderer = perfCategoryRenderer;
-      }
-      categories.appendChild(renderer.render(category, report.categoryGroups));
+      const scoreScaleEl = this._dom.cloneTemplate('#tmpl-lh-scorescale', this._templateContext);
+      scoresContainer.appendChild(scoreScaleEl);
     }
 
-    if (scoreHeader) {
-      const scoreScale = this._dom.cloneTemplate('#tmpl-lh-scorescale', this._templateContext);
-      scoreContainer.appendChild(scoreHeader);
-      scoreContainer.appendChild(scoreScale);
-    }
-
+    // Footer
     reportSection.appendChild(this._renderReportFooter(report));
 
+    // Finish
     const reportFragment = this._dom.createFragment();
     reportFragment.appendChild(headerContainer);
     reportFragment.appendChild(container);
-
     return reportFragment;
+
+    /**
+     * @param {CategoryJSON} category
+     */
+    function renderReportCategory(category) {
+      const renderer = category.id === 'performance' ? perfCategoryRenderer : categoryRenderer;
+      return renderer.render(category, report.categoryGroups);
+    }
   }
+
 
   /**
    * Place the AuditResult into the auditDfn (which has just weight & group)
