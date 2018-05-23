@@ -71,8 +71,7 @@ class ReportUIFeatures {
    * @param {ReportJSON} report
    */
   initFeatures(report) {
-    // Quit if it's a devtools report.
-    if (this._dom.document().querySelector('.lh-devtools')) return;
+    if (this._dom.isDevTools()) return;
 
     this.json = report;
     this._setupMediaQueryListeners();

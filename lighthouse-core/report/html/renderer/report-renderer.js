@@ -139,20 +139,19 @@ class ReportRenderer {
    * @return {DocumentFragment}
    */
   _renderReport(report) {
-    let headerStickyContainer;
-    // No header if it's devtools
-    if (this._dom.document().querySelector('.lh-devtools')) {
-      headerStickyContainer = this._dom.createElement('div', 'lh-header-nonsticky');
-      headerStickyContainer.appendChild(this._renderReportShortHeader());
+    let header;
+    const headerContainer = this._dom.createElement('div');
+    if (this._dom.isDevTools()) {
+      headerContainer.classList.add('lh-header-nonsticky');
+      header = this._renderReportShortHeader();
     } else {
-      headerStickyContainer = this._dom.createElement('div', 'lh-header-sticky');
-      headerStickyContainer.appendChild(this._renderReportHeader(report));
+      headerContainer.classList.add('lh-header-sticky');
+      header = this._renderReportHeader(report);
     }
-    const scoreContainer = this._dom.find('.lh-scores-container', headerStickyContainer);
-
+    headerContainer.appendChild(header);
+    const scoreContainer = this._dom.find('.lh-scores-container', headerContainer);
 
     const container = this._dom.createElement('div', 'lh-container');
-
     const reportSection = container.appendChild(this._dom.createElement('div', 'lh-report'));
 
     reportSection.appendChild(this._renderReportWarnings(report));
@@ -192,7 +191,7 @@ class ReportRenderer {
     reportSection.appendChild(this._renderReportFooter(report));
 
     const reportFragment = this._dom.createFragment();
-    reportFragment.appendChild(headerStickyContainer);
+    reportFragment.appendChild(headerContainer);
     reportFragment.appendChild(container);
 
     return reportFragment;
