@@ -17,6 +17,7 @@ const DetailsRenderer = require('../../../../report/html/renderer/details-render
 const CriticalRequestChainRenderer = require(
     '../../../../report/html/renderer/crc-details-renderer.js');
 const CategoryRenderer = require('../../../../report/html/renderer/category-renderer.js');
+
 const ReportRenderer = require('../../../../report/html/renderer/report-renderer.js');
 const sampleResults = require('../../../results/sample_v2.json');
 
@@ -26,15 +27,14 @@ const TEMPLATE_FILE = fs.readFileSync(__dirname +
 describe('PerfCategoryRenderer', () => {
   let category;
   let renderer;
+  global.CategoryRenderer = CategoryRenderer;
+  const PerformanceCategoryRenderer =
+      require('../../../../report/html/renderer/performance-category-renderer.js');
 
   beforeAll(() => {
     global.URL = URL;
     global.Util = Util;
     global.CriticalRequestChainRenderer = CriticalRequestChainRenderer;
-    global.CategoryRenderer = CategoryRenderer;
-
-    const PerformanceCategoryRenderer =
-        require('../../../../report/html/renderer/performance-category-renderer.js');
 
     const document = jsdom.jsdom(TEMPLATE_FILE);
     const dom = new DOM(document);
@@ -169,6 +169,20 @@ describe('PerfCategoryRenderer', () => {
       };
       const wastedMs = renderer._getWastedMs(auditWithDebug);
       assert.ok(Number.isFinite(wastedMs), 'Finite number not returned by wastedMs');
+    });
+  });
+
+  describe('getLastScreenshot', () => {
+    it('gets a datauri as a string', () => {
+      const datauri = PerformanceCategoryRenderer.getLastScreenshot(category);
+      assert.equal(typeof datauri, 'string');
+      assert.ok(datauri.startsWith('data:image/jpeg;base64,'));
+    });
+
+    it('returns null if there are no screenshots', () => {
+      const fakeCategory = Object.assign({}, category, {auditRefs: []});
+      const datauri = PerformanceCategoryRenderer.getLastScreenshot(fakeCategory);
+      assert.equal(datauri, null);
     });
   });
 });
