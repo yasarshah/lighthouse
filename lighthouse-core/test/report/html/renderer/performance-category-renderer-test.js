@@ -172,16 +172,16 @@ describe('PerfCategoryRenderer', () => {
     });
   });
 
-  describe('getLastScreenshot', () => {
+  describe('getFinalScreenshot', () => {
     it('gets a datauri as a string', () => {
-      const datauri = PerformanceCategoryRenderer.getLastScreenshot(category);
+      const datauri = PerformanceCategoryRenderer.getFinalScreenshot(category);
       assert.equal(typeof datauri, 'string');
       assert.ok(datauri.startsWith('data:image/jpeg;base64,'));
     });
 
     it('returns null if there are no screenshots', () => {
       const fakeCategory = Object.assign({}, category, {auditRefs: []});
-      const datauri = PerformanceCategoryRenderer.getLastScreenshot(fakeCategory);
+      const datauri = PerformanceCategoryRenderer.getFinalScreenshot(fakeCategory);
       assert.equal(datauri, null);
     });
   });

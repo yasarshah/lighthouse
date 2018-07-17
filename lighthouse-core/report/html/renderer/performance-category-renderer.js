@@ -198,12 +198,10 @@ class PerformanceCategoryRenderer extends CategoryRenderer {
    * @return {null|string}
    * @override
    */
-  static getLastScreenshot(category) {
-    const auditRef = category.auditRefs.find(audit => audit.id === 'screenshot-thumbnails');
-    if (!auditRef || !auditRef.result) return null;
-    const screenshots = auditRef.result.details.items;
-    if (!screenshots.length) return null;
-    return `data:image/jpeg;base64,${screenshots.slice(-1)[0].data}`;
+  static getFinalScreenshot(category) {
+    const auditRef = category.auditRefs.find(audit => audit.id === 'final-screenshot');
+    if (!auditRef || !auditRef.result || auditRef.result.scoreDisplayMode === 'error') return null;
+    return `data:image/jpeg;base64,${auditRef.result.details.items[0].data}`;
   }
 }
 
