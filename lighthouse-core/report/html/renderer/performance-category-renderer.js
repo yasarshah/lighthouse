@@ -196,7 +196,6 @@ class PerformanceCategoryRenderer extends CategoryRenderer {
   /**
    * @param {LH.ReportResult.Category} category
    * @return {null|string}
-   * @override
    */
   static getFinalScreenshot(category) {
     const auditRef = category.auditRefs.find(audit => audit.id === 'final-screenshot');
