@@ -24,8 +24,8 @@ class TotalByteWeight extends ByteEfficiencyAudit {
       scoreDisplayMode: ByteEfficiencyAudit.SCORING_MODES.NUMERIC,
       description:
         'Large network payloads cost users real money and are highly correlated with ' +
-        'long load times. [Learn ' +
-        'more](https://developers.google.com/web/tools/lighthouse/audits/network-payloads).',
+        'long load times. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/network-payloads). ' +
+        'JavaScript files exceeding 170kb are marked below, as they surpass [recommended thresholds](https://infrequently.org/2017/10/can-you-afford-it-real-world-web-performance-budgets/).',
       requiredArtifacts: ['devtoolsLogs'],
     };
   }
