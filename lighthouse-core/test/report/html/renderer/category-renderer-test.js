@@ -142,15 +142,23 @@ describe('CategoryRenderer', () => {
   });
 
   it('renders manual audits if the category contains them', () => {
-    const pwaCategory = sampleResults.reportCategories.find(cat => cat.id === 'pwa');
-    const categoryDOM = renderer.render(pwaCategory, sampleResults.categoryGroups);
-    assert.ok(categoryDOM.querySelector('.lh-audit-group--manual .lh-audit-group__summary'));
-    assert.equal(categoryDOM.querySelectorAll('.lh-audit--manual').length, 3,
-        'score shows informative and dash icon');
+    // Performance has its own category renderer
+    const nonPerfCategories = sampleResults.reportCategories.filter(c => c.id !== 'performance');
+    for (const category of nonPerfCategories) {
+      const manualCount = category.auditRefs.reduce(
+        (sum, audit) => (sum += audit.result.scoreDisplayMode === 'manual' ? 1 : 0), 0
+      );
+      const categoryDOM = renderer.render(category, sampleResults.categoryGroups);
 
-    const perfCategory = sampleResults.reportCategories.find(cat => cat.id === 'performance');
-    const categoryDOM2 = renderer.render(perfCategory, sampleResults.categoryGroups);
-    assert.ok(!categoryDOM2.querySelector('.lh-audit-group--manual'));
+      if (manualCount) {
+        assert.ok(categoryDOM.querySelector('.lh-audit-group--manual .lh-audit-group__summary'));
+      }
+
+      const elemCount = categoryDOM.querySelectorAll('.lh-audit-group--manual .lh-audit').length;
+      assert.equal(elemCount,manualCount,
+          `${category.id} failed (Elem count: ${elemCount}, audit count: ${manualCount}`
+      );
+    }
   });
 
   it('renders not applicable audits if the category contains them', () => {

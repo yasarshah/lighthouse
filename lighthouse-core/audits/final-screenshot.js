@@ -51,7 +51,7 @@ class FinalScreenshot extends Audit {
         items: [
           {
             timestamp: finalScreenshot.ts,
-            timing,
+            timing: Math.round(timing / 1000),
             data: finalScreenshot.args.snapshot,
           },
         ],
