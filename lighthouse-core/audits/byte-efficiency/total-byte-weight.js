@@ -6,7 +6,7 @@
 'use strict';
 
 const ByteEfficiencyAudit = require('./byte-efficiency-audit');
-const WebInspector = require('../../lib/web-inspector');
+const NetworkRequest = require('../../lib/network-request');
 
 // Based on HTTP Archive information we go for 170kb
 // More info can be found here https://github.com/GoogleChrome/lighthouse/issues/1902
@@ -45,11 +45,11 @@ class TotalByteWeight extends ByteEfficiencyAudit {
   /**
    * Checks if record is a javascript asset and if it exceeds our bundle size limit
    *
-   * @param {LH.WebInspector.NetworkRequest} record
+   * @param {LH.Artifacts.NetworkRequest} record
    * @return {boolean}
    */
   static hasExceededJSBundleSize(record) {
-    return record._resourceType === WebInspector.resourceTypes.Script
+    return record.resourceType === NetworkRequest.TYPES.Script
       && record.transferSize > BUNDLE_SIZE_THRESHOLD;
   }
 
