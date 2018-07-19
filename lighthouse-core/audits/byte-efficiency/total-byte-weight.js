@@ -76,7 +76,6 @@ class TotalByteWeight extends ByteEfficiencyAudit {
       const result = {
         url: record.url,
         totalBytes: record.transferSize,
-        totalMs: ByteEfficiencyAudit.bytesToMs(record.transferSize, networkThroughput),
         flagged: TotalByteWeight.hasExceededJSBundleSize(record),
       };
 
@@ -101,7 +100,6 @@ class TotalByteWeight extends ByteEfficiencyAudit {
         granularity: 1,
         text: 'Total Size',
       },
-      {key: 'totalMs', itemType: 'ms', text: 'Transfer Time'},
     ];
 
     const tableDetails = ByteEfficiencyAudit.makeTableDetails(headings, results);
