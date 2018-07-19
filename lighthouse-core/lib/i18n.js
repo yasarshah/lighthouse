@@ -35,14 +35,21 @@ const LH_ROOT = path.join(__dirname, '../../');
 
 const UIStrings = {
   ms: '{timeInMs, number, milliseconds}\xa0ms',
+  displayValueByteSavings: 'Potential savings of {wastedBytes, number, bytes}\xa0KB',
+  displayValueMsSavings: 'Potential savings of {wastedMs, number, milliseconds}\xa0ms',
   columnURL: 'URL',
   columnSize: 'Size (KB)',
+  columnCacheTTL: 'Cache TTL',
+  columnWastedBytes: 'Potential Savings (KB)',
   columnWastedMs: 'Potential Savings (ms)',
-  displayValueWastedMs: 'Potential savings of {wastedMs, number, milliseconds}\xa0ms',
+  columnTimeSpent: 'Time Spent',
 };
 
 const formats = {
   number: {
+    bytes: {
+      maximumFractionDigits: 0,
+    },
     milliseconds: {
       maximumFractionDigits: 0,
     },
