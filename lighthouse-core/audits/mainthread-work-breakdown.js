@@ -114,7 +114,7 @@ class MainThreadWorkBreakdown extends Audit {
     return {
       score,
       rawValue: totalExecutionTime,
-      displayValue: str_(i18n.UIStrings.ms, {timeInms: totalExecutionTime}),
+      displayValue: str_(i18n.UIStrings.ms, {timeInMs: totalExecutionTime}),
       details: tableDetails,
     };
   }
