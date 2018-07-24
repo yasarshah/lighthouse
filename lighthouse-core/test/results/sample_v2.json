@@ -630,7 +630,7 @@
       "score": 0.96,
       "scoreDisplayMode": "numeric",
       "rawValue": 1548.5690000000002,
-      "displayValue": "NaN ms",
+      "displayValue": "1,550 ms",
       "details": {
         "type": "table",
         "headings": [
@@ -3420,7 +3420,7 @@
         },
         {
           "values": {
-            "timeInms": 1548.5690000000002
+            "timeInMs": 1548.5690000000002
           },
           "path": "audits[mainthread-work-breakdown].displayValue"
         },
