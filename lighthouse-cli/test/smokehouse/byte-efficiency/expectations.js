@@ -94,10 +94,6 @@ module.exports = [
         },
       },
       'uses-responsive-images': {
-        displayValue: [
-          'Potential savings of %d\xa0KB',
-          75,
-        ],
         details: {
           overallSavingsBytes: '>75000',
           items: [
