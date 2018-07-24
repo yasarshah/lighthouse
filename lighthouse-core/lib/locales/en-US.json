@@ -84,7 +84,7 @@
     "message": "A long cache lifetime can speed up repeat visits to your page. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/cache-policy)."
   },
   "lighthouse-core/audits/byte-efficiency/uses-long-cache-ttl.js | displayValue": {
-    "message": "{itemCount, plural,\n    one {1 resource}\n    other {# resources}\n    } found"
+    "message": "{itemCount, plural,\n    one {1 resource found}\n    other {# resources found}\n    }"
   },
   "lighthouse-core/audits/byte-efficiency/uses-optimized-images.js | title": {
     "message": "Efficiently encode images"
@@ -117,7 +117,7 @@
     "message": "The Critical Request Chains below show you what resources are issued with a high priority. Consider reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/critical-request-chains)."
   },
   "lighthouse-core/audits/critical-request-chains.js | displayValue": {
-    "message": "{itemCount, plural,\n    one {1 chain}\n    other {# chains}\n    } found"
+    "message": "{itemCount, plural,\n    one {1 chain found}\n    other {# chains found}\n    }"
   },
   "lighthouse-core/audits/dobetterweb/dom-size.js | title": {
     "message": "Avoids an excessive DOM size"

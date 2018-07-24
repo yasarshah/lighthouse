@@ -21,9 +21,9 @@ const UIStrings = {
     'A long cache lifetime can speed up repeat visits to your page. ' +
     '[Learn more](https://developers.google.com/web/tools/lighthouse/audits/cache-policy).',
   displayValue: `{itemCount, plural,
-    one {1 resource}
-    other {# resources}
-    } found`,
+    one {1 resource found}
+    other {# resources found}
+    }`,
 };
 
 const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
