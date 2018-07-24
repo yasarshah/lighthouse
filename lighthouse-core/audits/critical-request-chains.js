@@ -15,7 +15,7 @@ class CriticalRequestChains extends Audit {
   static get meta() {
     return {
       id: 'critical-request-chains',
-      title: 'Critical Request Chains',
+      title: 'Minimize Critical Request Chains',
       scoreDisplayMode: Audit.SCORING_MODES.INFORMATIVE,
       description: 'The Critical Request Chains below show you what resources are ' +
           'issued with a high priority. Consider reducing ' +

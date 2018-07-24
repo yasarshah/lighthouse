@@ -16,7 +16,8 @@ class TTFBMetric extends Audit {
   static get meta() {
     return {
       id: 'time-to-first-byte',
-      title: 'Keep server response times low (TTFB)',
+      title: 'Server response times are short (TTFB)',
+      failureTitle: 'Reduce server response times (TTFB)',
       description: 'Time To First Byte identifies the time at which your server sends a response.' +
         ' [Learn more](https://developers.google.com/web/tools/lighthouse/audits/ttfb).',
       requiredArtifacts: ['devtoolsLogs', 'URL'],

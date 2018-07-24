@@ -24,7 +24,7 @@ class CacheHeaders extends Audit {
     return {
       id: 'uses-long-cache-ttl',
       title: 'Uses efficient cache policy on static assets',
-      failureTitle: 'Uses inefficient cache policy on static assets',
+      failureTitle: 'Serve static assets with an efficient cache policy',
       description:
         'A long cache lifetime can speed up repeat visits to your page. ' +
         '[Learn more](https://developers.google.com/web/tools/lighthouse/audits/cache-policy).',

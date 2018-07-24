@@ -22,7 +22,7 @@ class MainThreadWorkBreakdown extends Audit {
     return {
       id: 'mainthread-work-breakdown',
       title: 'Minimizes main thread work',
-      failureTitle: 'Has significant main thread work',
+      failureTitle: 'Minimize main thread work',
       scoreDisplayMode: Audit.SCORING_MODES.NUMERIC,
       description: 'Consider reducing the time spent parsing, compiling and executing JS. ' +
         'You may find delivering smaller JS payloads helps with this.',

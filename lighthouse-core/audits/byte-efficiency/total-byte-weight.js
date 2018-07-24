@@ -15,7 +15,7 @@ class TotalByteWeight extends ByteEfficiencyAudit {
     return {
       id: 'total-byte-weight',
       title: 'Avoids enormous network payloads',
-      failureTitle: 'Has enormous network payloads',
+      failureTitle: 'Avoid enormous network payloads',
       scoreDisplayMode: ByteEfficiencyAudit.SCORING_MODES.NUMERIC,
       description:
         'Large network payloads cost users real money and are highly correlated with ' +
