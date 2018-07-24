@@ -14,7 +14,7 @@ const UIStrings = {
       'visible. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint).',
 };
 
-const str_ = i18n.createStringFormatter(__filename, UIStrings);
+const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
 
 class FirstMeaningfulPaint extends Audit {
   /**

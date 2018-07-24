@@ -25,7 +25,7 @@ const UIStrings = {
     `connections to important third-party origins. [Learn more](https://developers.google.com/web/fundamentals/performance/resource-prioritization#preconnect).`,
 };
 
-const str_ = i18n.createStringFormatter(__filename, UIStrings);
+const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
 
 class UsesRelPreconnectAudit extends Audit {
   /**

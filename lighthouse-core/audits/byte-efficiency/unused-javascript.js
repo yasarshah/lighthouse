@@ -13,7 +13,7 @@ const UIStrings = {
   description: 'Remove unused JavaScript to reduce bytes consumed by network activity.',
 };
 
-const str_ = i18n.createStringFormatter(__filename, UIStrings);
+const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
 
 const IGNORE_THRESHOLD_IN_BYTES = 2048;
 

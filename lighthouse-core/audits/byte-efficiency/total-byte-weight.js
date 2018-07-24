@@ -18,7 +18,7 @@ const UIStrings = {
   displayValue: 'Total size was {totalBytes, number, bytes}\xa0KB',
 };
 
-const str_ = i18n.createStringFormatter(__filename, UIStrings);
+const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
 
 class TotalByteWeight extends ByteEfficiencyAudit {
   /**

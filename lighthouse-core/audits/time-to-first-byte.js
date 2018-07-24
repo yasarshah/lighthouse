@@ -15,7 +15,7 @@ const UIStrings = {
   displayValue: `Root document took {timeInMs, number, milliseconds}\xa0ms`,
 };
 
-const str_ = i18n.createStringFormatter(__filename, UIStrings);
+const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
 
 const TTFB_THRESHOLD = 600;
 

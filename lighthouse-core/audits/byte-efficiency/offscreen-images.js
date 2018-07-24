@@ -22,7 +22,7 @@ const UIStrings = {
     '[Learn more](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images).',
 };
 
-const str_ = i18n.createStringFormatter(__filename, UIStrings);
+const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
 
 const ALLOWABLE_OFFSCREEN_X = 100;
 const ALLOWABLE_OFFSCREEN_Y = 200;

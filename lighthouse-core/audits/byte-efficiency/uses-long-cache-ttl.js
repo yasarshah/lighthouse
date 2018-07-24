@@ -26,7 +26,7 @@ const UIStrings = {
     } found`,
 };
 
-const str_ = i18n.createStringFormatter(__filename, UIStrings);
+const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
 
 // Ignore assets that have very high likelihood of cache hit
 const IGNORE_THRESHOLD_IN_PERCENT = 0.925;

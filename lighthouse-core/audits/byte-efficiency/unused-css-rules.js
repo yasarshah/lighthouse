@@ -15,7 +15,7 @@ const UIStrings = {
     '[Learn more](https://developers.google.com/web/tools/lighthouse/audits/unused-css).',
 };
 
-const str_ = i18n.createStringFormatter(__filename, UIStrings);
+const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
 
 const IGNORE_THRESHOLD_IN_BYTES = 2048;
 const PREVIEW_LENGTH = 100;

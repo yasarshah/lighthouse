@@ -10,7 +10,7 @@ const linearInterpolation = require('../../lib/statistics').linearInterpolation;
 const Interactive = require('../../gather/computed/metrics/lantern-interactive');
 const i18n = require('../../lib/i18n');
 
-const str_ = i18n.createStringFormatter(__filename, {});
+const str_ = i18n.createMessageInstanceIdFn(__filename, {});
 
 /** @typedef {import('../../lib/dependency-graph/simulator/simulator')} Simulator */
 /** @typedef {import('../../lib/dependency-graph/base-node.js').Node} Node */

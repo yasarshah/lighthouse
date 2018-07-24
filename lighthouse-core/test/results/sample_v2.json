@@ -1876,7 +1876,7 @@
       "score": 0.46,
       "scoreDisplayMode": "numeric",
       "rawValue": 1129,
-      "displayValue": "5 resources delayed first paint by 1,130 ms",
+      "displayValue": "Potential savings of 1,130 ms",
       "details": {
         "type": "opportunity",
         "headings": [
@@ -1985,7 +1985,7 @@
     "unused-css-rules": {
       "id": "unused-css-rules",
       "title": "Defer unused CSS",
-      "description": "Remove unused rules from stylesheets to reduce unnecessary bytes consumed by network activity. [Learn more](https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery).",
+      "description": "Remove unused rules from stylesheets to reduce unnecessary bytes consumed by network activity. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/unused-css).",
       "score": 1,
       "scoreDisplayMode": "numeric",
       "rawValue": 0,
@@ -3373,377 +3373,376 @@
       "description": "To appear in search results, crawlers need access to your app."
     }
   },
-  "localeLog": {
-    "lighthouse-core/audits/metrics/first-contentful-paint.js!#title": [
-      "audits[first-contentful-paint].title"
-    ],
-    "lighthouse-core/audits/metrics/first-contentful-paint.js!#description": [
-      "audits[first-contentful-paint].description"
-    ],
-    "lighthouse-core/lib/i18n.js!#ms": [
-      {
-        "values": {
-          "timeInMs": 3969.135
+  "i18n": {
+    "icuMessagePaths": {
+      "lighthouse-core/audits/metrics/first-contentful-paint.js | title": [
+        "audits[first-contentful-paint].title"
+      ],
+      "lighthouse-core/audits/metrics/first-contentful-paint.js | description": [
+        "audits[first-contentful-paint].description"
+      ],
+      "lighthouse-core/lib/i18n.js | ms": [
+        {
+          "values": {
+            "timeInMs": 3969.135
+          },
+          "path": "audits[first-contentful-paint].displayValue"
         },
-        "path": "audits[first-contentful-paint].displayValue"
-      },
-      {
-        "values": {
-          "timeInMs": 3969.136
+        {
+          "values": {
+            "timeInMs": 3969.136
+          },
+          "path": "audits[first-meaningful-paint].displayValue"
         },
-        "path": "audits[first-meaningful-paint].displayValue"
-      },
-      {
-        "values": {
-          "timeInMs": 4417
+        {
+          "values": {
+            "timeInMs": 4417
+          },
+          "path": "audits[speed-index].displayValue"
         },
-        "path": "audits[speed-index].displayValue"
-      },
-      {
-        "values": {
-          "timeInMs": 16
+        {
+          "values": {
+            "timeInMs": 16
+          },
+          "path": "audits[estimated-input-latency].displayValue"
         },
-        "path": "audits[estimated-input-latency].displayValue"
-      },
-      {
-        "values": {
-          "timeInMs": 4927.278
+        {
+          "values": {
+            "timeInMs": 4927.278
+          },
+          "path": "audits[first-cpu-idle].displayValue"
         },
-        "path": "audits[first-cpu-idle].displayValue"
-      },
-      {
-        "values": {
-          "timeInMs": 4927.278
+        {
+          "values": {
+            "timeInMs": 4927.278
+          },
+          "path": "audits.interactive.displayValue"
         },
-        "path": "audits.interactive.displayValue"
-      },
-      {
-        "values": {
-          "timeInms": 1548.5690000000002
+        {
+          "values": {
+            "timeInms": 1548.5690000000002
+          },
+          "path": "audits[mainthread-work-breakdown].displayValue"
         },
-        "path": "audits[mainthread-work-breakdown].displayValue"
-      },
-      {
-        "values": {
-          "timeInMs": 1150.932
+        {
+          "values": {
+            "timeInMs": 1150.932
+          },
+          "path": "audits[bootup-time].displayValue"
+        }
+      ],
+      "lighthouse-core/audits/metrics/first-meaningful-paint.js | title": [
+        "audits[first-meaningful-paint].title"
+      ],
+      "lighthouse-core/audits/metrics/first-meaningful-paint.js | description": [
+        "audits[first-meaningful-paint].description"
+      ],
+      "lighthouse-core/audits/metrics/speed-index.js | title": [
+        "audits[speed-index].title"
+      ],
+      "lighthouse-core/audits/metrics/speed-index.js | description": [
+        "audits[speed-index].description"
+      ],
+      "lighthouse-core/audits/metrics/estimated-input-latency.js | title": [
+        "audits[estimated-input-latency].title"
+      ],
+      "lighthouse-core/audits/metrics/estimated-input-latency.js | description": [
+        "audits[estimated-input-latency].description"
+      ],
+      "lighthouse-core/audits/time-to-first-byte.js | title": [
+        "audits[time-to-first-byte].title"
+      ],
+      "lighthouse-core/audits/time-to-first-byte.js | description": [
+        "audits[time-to-first-byte].description"
+      ],
+      "lighthouse-core/audits/time-to-first-byte.js | displayValue": [
+        {
+          "values": {
+            "timeInMs": 570.5630000000001
+          },
+          "path": "audits[time-to-first-byte].displayValue"
+        }
+      ],
+      "lighthouse-core/audits/metrics/first-cpu-idle.js | title": [
+        "audits[first-cpu-idle].title"
+      ],
+      "lighthouse-core/audits/metrics/first-cpu-idle.js | description": [
+        "audits[first-cpu-idle].description"
+      ],
+      "lighthouse-core/audits/metrics/interactive.js | title": [
+        "audits.interactive.title"
+      ],
+      "lighthouse-core/audits/metrics/interactive.js | description": [
+        "audits.interactive.description"
+      ],
+      "lighthouse-core/audits/user-timings.js | title": [
+        "audits[user-timings].title"
+      ],
+      "lighthouse-core/audits/user-timings.js | description": [
+        "audits[user-timings].description"
+      ],
+      "lighthouse-core/audits/critical-request-chains.js | title": [
+        "audits[critical-request-chains].title"
+      ],
+      "lighthouse-core/audits/critical-request-chains.js | description": [
+        "audits[critical-request-chains].description"
+      ],
+      "lighthouse-core/audits/critical-request-chains.js | displayValue": [
+        {
+          "values": {
+            "itemCount": 12
+          },
+          "path": "audits[critical-request-chains].displayValue"
+        }
+      ],
+      "lighthouse-core/audits/redirects.js | title": [
+        "audits.redirects.title"
+      ],
+      "lighthouse-core/audits/redirects.js | description": [
+        "audits.redirects.description"
+      ],
+      "lighthouse-core/audits/mainthread-work-breakdown.js | title": [
+        "audits[mainthread-work-breakdown].title"
+      ],
+      "lighthouse-core/audits/mainthread-work-breakdown.js | description": [
+        "audits[mainthread-work-breakdown].description"
+      ],
+      "lighthouse-core/audits/mainthread-work-breakdown.js | columnCategory": [
+        "audits[mainthread-work-breakdown].details.headings[0].text"
+      ],
+      "lighthouse-core/lib/i18n.js | columnTimeSpent": [
+        "audits[mainthread-work-breakdown].details.headings[1].text"
+      ],
+      "lighthouse-core/audits/bootup-time.js | title": [
+        "audits[bootup-time].title"
+      ],
+      "lighthouse-core/audits/bootup-time.js | description": [
+        "audits[bootup-time].description"
+      ],
+      "lighthouse-core/lib/i18n.js | columnURL": [
+        "audits[bootup-time].details.headings[0].text",
+        "audits[uses-long-cache-ttl].details.headings[0].text",
+        "audits[total-byte-weight].details.headings[0].text",
+        "audits[render-blocking-resources].details.headings[0].label",
+        "audits[unminified-javascript].details.headings[0].label",
+        "audits[uses-webp-images].details.headings[1].label",
+        "audits[uses-text-compression].details.headings[0].label"
+      ],
+      "lighthouse-core/audits/bootup-time.js | columnTotal": [
+        "audits[bootup-time].details.headings[1].text"
+      ],
+      "lighthouse-core/audits/bootup-time.js | columnScriptEval": [
+        "audits[bootup-time].details.headings[2].text"
+      ],
+      "lighthouse-core/audits/bootup-time.js | columnScriptParse": [
+        "audits[bootup-time].details.headings[3].text"
+      ],
+      "lighthouse-core/audits/uses-rel-preload.js | title": [
+        "audits[uses-rel-preload].title"
+      ],
+      "lighthouse-core/audits/uses-rel-preload.js | description": [
+        "audits[uses-rel-preload].description"
+      ],
+      "lighthouse-core/lib/i18n.js | displayValueMsSavings": [
+        {
+          "values": {
+            "wastedMs": 0
+          },
+          "path": "audits[uses-rel-preload].displayValue"
         },
-        "path": "audits[bootup-time].displayValue"
-      }
-    ],
-    "lighthouse-core/audits/metrics/first-meaningful-paint.js!#title": [
-      "audits[first-meaningful-paint].title"
-    ],
-    "lighthouse-core/audits/metrics/first-meaningful-paint.js!#description": [
-      "audits[first-meaningful-paint].description"
-    ],
-    "lighthouse-core/audits/metrics/speed-index.js!#title": [
-      "audits[speed-index].title"
-    ],
-    "lighthouse-core/audits/metrics/speed-index.js!#description": [
-      "audits[speed-index].description"
-    ],
-    "lighthouse-core/audits/metrics/estimated-input-latency.js!#title": [
-      "audits[estimated-input-latency].title"
-    ],
-    "lighthouse-core/audits/metrics/estimated-input-latency.js!#description": [
-      "audits[estimated-input-latency].description"
-    ],
-    "lighthouse-core/audits/time-to-first-byte.js!#title": [
-      "audits[time-to-first-byte].title"
-    ],
-    "lighthouse-core/audits/time-to-first-byte.js!#description": [
-      "audits[time-to-first-byte].description"
-    ],
-    "lighthouse-core/audits/time-to-first-byte.js!#displayValue": [
-      {
-        "values": {
-          "timeInMs": 570.5630000000001
+        {
+          "values": {
+            "wastedMs": 0
+          },
+          "path": "audits[uses-rel-preconnect].displayValue"
         },
-        "path": "audits[time-to-first-byte].displayValue"
-      }
-    ],
-    "lighthouse-core/audits/metrics/first-cpu-idle.js!#title": [
-      "audits[first-cpu-idle].title"
-    ],
-    "lighthouse-core/audits/metrics/first-cpu-idle.js!#description": [
-      "audits[first-cpu-idle].description"
-    ],
-    "lighthouse-core/audits/metrics/interactive.js!#title": [
-      "audits.interactive.title"
-    ],
-    "lighthouse-core/audits/metrics/interactive.js!#description": [
-      "audits.interactive.description"
-    ],
-    "lighthouse-core/audits/user-timings.js!#title": [
-      "audits[user-timings].title"
-    ],
-    "lighthouse-core/audits/user-timings.js!#description": [
-      "audits[user-timings].description"
-    ],
-    "lighthouse-core/audits/critical-request-chains.js!#title": [
-      "audits[critical-request-chains].title"
-    ],
-    "lighthouse-core/audits/critical-request-chains.js!#description": [
-      "audits[critical-request-chains].description"
-    ],
-    "lighthouse-core/audits/critical-request-chains.js!#displayValue": [
-      {
-        "values": {
-          "itemCount": 12
+        {
+          "values": {
+            "wastedMs": 1129
+          },
+          "path": "audits[render-blocking-resources].displayValue"
+        }
+      ],
+      "lighthouse-core/audits/uses-rel-preconnect.js | title": [
+        "audits[uses-rel-preconnect].title"
+      ],
+      "lighthouse-core/audits/uses-rel-preconnect.js | description": [
+        "audits[uses-rel-preconnect].description"
+      ],
+      "lighthouse-core/audits/font-display.js | title": [
+        "audits[font-display].title"
+      ],
+      "lighthouse-core/audits/font-display.js | description": [
+        "audits[font-display].description"
+      ],
+      "lighthouse-core/audits/byte-efficiency/uses-long-cache-ttl.js | failureTitle": [
+        "audits[uses-long-cache-ttl].title"
+      ],
+      "lighthouse-core/audits/byte-efficiency/uses-long-cache-ttl.js | description": [
+        "audits[uses-long-cache-ttl].description"
+      ],
+      "lighthouse-core/audits/byte-efficiency/uses-long-cache-ttl.js | displayValue": [
+        {
+          "values": {
+            "itemCount": 11
+          },
+          "path": "audits[uses-long-cache-ttl].displayValue"
+        }
+      ],
+      "lighthouse-core/lib/i18n.js | columnCacheTTL": [
+        "audits[uses-long-cache-ttl].details.headings[1].text"
+      ],
+      "lighthouse-core/lib/i18n.js | columnSize": [
+        "audits[uses-long-cache-ttl].details.headings[2].text",
+        "audits[total-byte-weight].details.headings[1].text",
+        "audits[render-blocking-resources].details.headings[1].label",
+        "audits[unminified-javascript].details.headings[1].label",
+        "audits[uses-webp-images].details.headings[2].label",
+        "audits[uses-text-compression].details.headings[1].label"
+      ],
+      "lighthouse-core/audits/byte-efficiency/total-byte-weight.js | title": [
+        "audits[total-byte-weight].title"
+      ],
+      "lighthouse-core/audits/byte-efficiency/total-byte-weight.js | description": [
+        "audits[total-byte-weight].description"
+      ],
+      "lighthouse-core/audits/byte-efficiency/total-byte-weight.js | displayValue": [
+        {
+          "values": {
+            "totalBytes": 160738
+          },
+          "path": "audits[total-byte-weight].displayValue"
+        }
+      ],
+      "lighthouse-core/audits/byte-efficiency/offscreen-images.js | title": [
+        "audits[offscreen-images].title"
+      ],
+      "lighthouse-core/audits/byte-efficiency/offscreen-images.js | description": [
+        "audits[offscreen-images].description"
+      ],
+      "lighthouse-core/audits/byte-efficiency/render-blocking-resources.js | title": [
+        "audits[render-blocking-resources].title"
+      ],
+      "lighthouse-core/audits/byte-efficiency/render-blocking-resources.js | description": [
+        "audits[render-blocking-resources].description"
+      ],
+      "lighthouse-core/lib/i18n.js | columnWastedMs": [
+        "audits[render-blocking-resources].details.headings[2].label"
+      ],
+      "lighthouse-core/audits/byte-efficiency/unminified-css.js | title": [
+        "audits[unminified-css].title"
+      ],
+      "lighthouse-core/audits/byte-efficiency/unminified-css.js | description": [
+        "audits[unminified-css].description"
+      ],
+      "lighthouse-core/audits/byte-efficiency/unminified-javascript.js | title": [
+        "audits[unminified-javascript].title"
+      ],
+      "lighthouse-core/audits/byte-efficiency/unminified-javascript.js | description": [
+        "audits[unminified-javascript].description"
+      ],
+      "lighthouse-core/lib/i18n.js | displayValueByteSavings": [
+        {
+          "values": {
+            "wastedBytes": 30470
+          },
+          "path": "audits[unminified-javascript].displayValue"
         },
-        "path": "audits[critical-request-chains].displayValue"
-      }
-    ],
-    "lighthouse-core/audits/redirects.js!#title": [
-      "audits.redirects.title"
-    ],
-    "lighthouse-core/audits/redirects.js!#description": [
-      "audits.redirects.description"
-    ],
-    "lighthouse-core/audits/mainthread-work-breakdown.js!#title": [
-      "audits[mainthread-work-breakdown].title"
-    ],
-    "lighthouse-core/audits/mainthread-work-breakdown.js!#description": [
-      "audits[mainthread-work-breakdown].description"
-    ],
-    "lighthouse-core/audits/mainthread-work-breakdown.js!#columnCategory": [
-      "audits[mainthread-work-breakdown].details.headings[0].text"
-    ],
-    "lighthouse-core/lib/i18n.js!#columnTimeSpent": [
-      "audits[mainthread-work-breakdown].details.headings[1].text"
-    ],
-    "lighthouse-core/audits/bootup-time.js!#title": [
-      "audits[bootup-time].title"
-    ],
-    "lighthouse-core/audits/bootup-time.js!#description": [
-      "audits[bootup-time].description"
-    ],
-    "lighthouse-core/lib/i18n.js!#columnURL": [
-      "audits[bootup-time].details.headings[0].text",
-      "audits[uses-long-cache-ttl].details.headings[0].text",
-      "audits[total-byte-weight].details.headings[0].text",
-      "audits[render-blocking-resources].details.headings[0].label",
-      "audits[unminified-javascript].details.headings[0].label",
-      "audits[uses-webp-images].details.headings[1].label",
-      "audits[uses-text-compression].details.headings[0].label"
-    ],
-    "lighthouse-core/audits/bootup-time.js!#columnTotal": [
-      "audits[bootup-time].details.headings[1].text"
-    ],
-    "lighthouse-core/audits/bootup-time.js!#columnScriptEval": [
-      "audits[bootup-time].details.headings[2].text"
-    ],
-    "lighthouse-core/audits/bootup-time.js!#columnScriptParse": [
-      "audits[bootup-time].details.headings[3].text"
-    ],
-    "lighthouse-core/audits/uses-rel-preload.js!#title": [
-      "audits[uses-rel-preload].title"
-    ],
-    "lighthouse-core/audits/uses-rel-preload.js!#description": [
-      "audits[uses-rel-preload].description"
-    ],
-    "lighthouse-core/lib/i18n.js!#displayValueMsSavings": [
-      {
-        "values": {
-          "wastedMs": 0
+        {
+          "values": {
+            "wastedBytes": 8526
+          },
+          "path": "audits[uses-webp-images].displayValue"
         },
-        "path": "audits[uses-rel-preload].displayValue"
-      },
-      {
-        "values": {
-          "wastedMs": 0
-        },
-        "path": "audits[uses-rel-preconnect].displayValue"
-      }
-    ],
-    "lighthouse-core/audits/uses-rel-preconnect.js!#title": [
-      "audits[uses-rel-preconnect].title"
-    ],
-    "lighthouse-core/audits/uses-rel-preconnect.js!#description": [
-      "audits[uses-rel-preconnect].description"
-    ],
-    "lighthouse-core/audits/font-display.js!#title": [
-      "audits[font-display].title"
-    ],
-    "lighthouse-core/audits/font-display.js!#description": [
-      "audits[font-display].description"
-    ],
-    "lighthouse-core/audits/byte-efficiency/uses-long-cache-ttl.js!#failureTitle": [
-      "audits[uses-long-cache-ttl].title"
-    ],
-    "lighthouse-core/audits/byte-efficiency/uses-long-cache-ttl.js!#description": [
-      "audits[uses-long-cache-ttl].description"
-    ],
-    "lighthouse-core/audits/byte-efficiency/uses-long-cache-ttl.js!#displayValue": [
-      {
-        "values": {
-          "itemCount": 11
-        },
-        "path": "audits[uses-long-cache-ttl].displayValue"
-      }
-    ],
-    "lighthouse-core/lib/i18n.js!#columnCacheTTL": [
-      "audits[uses-long-cache-ttl].details.headings[1].text"
-    ],
-    "lighthouse-core/lib/i18n.js!#columnSize": [
-      "audits[uses-long-cache-ttl].details.headings[2].text",
-      "audits[total-byte-weight].details.headings[1].text",
-      "audits[render-blocking-resources].details.headings[1].label",
-      "audits[unminified-javascript].details.headings[1].label",
-      "audits[uses-webp-images].details.headings[2].label",
-      "audits[uses-text-compression].details.headings[1].label"
-    ],
-    "lighthouse-core/audits/byte-efficiency/total-byte-weight.js!#title": [
-      "audits[total-byte-weight].title"
-    ],
-    "lighthouse-core/audits/byte-efficiency/total-byte-weight.js!#description": [
-      "audits[total-byte-weight].description"
-    ],
-    "lighthouse-core/audits/byte-efficiency/total-byte-weight.js!#displayValue": [
-      {
-        "values": {
-          "totalBytes": 160738
-        },
-        "path": "audits[total-byte-weight].displayValue"
-      }
-    ],
-    "lighthouse-core/audits/byte-efficiency/offscreen-images.js!#title": [
-      "audits[offscreen-images].title"
-    ],
-    "lighthouse-core/audits/byte-efficiency/offscreen-images.js!#description": [
-      "audits[offscreen-images].description"
-    ],
-    "lighthouse-core/audits/byte-efficiency/render-blocking-resources.js!#title": [
-      "audits[render-blocking-resources].title"
-    ],
-    "lighthouse-core/audits/byte-efficiency/render-blocking-resources.js!#description": [
-      "audits[render-blocking-resources].description"
-    ],
-    "lighthouse-core/audits/byte-efficiency/render-blocking-resources.js!#displayValue": [
-      {
-        "values": {
-          "timeInMs": 1129,
-          "itemCount": 5
-        },
-        "path": "audits[render-blocking-resources].displayValue"
-      }
-    ],
-    "lighthouse-core/lib/i18n.js!#columnWastedMs": [
-      "audits[render-blocking-resources].details.headings[2].label"
-    ],
-    "lighthouse-core/audits/byte-efficiency/unminified-css.js!#title": [
-      "audits[unminified-css].title"
-    ],
-    "lighthouse-core/audits/byte-efficiency/unminified-css.js!#description": [
-      "audits[unminified-css].description"
-    ],
-    "lighthouse-core/audits/byte-efficiency/unminified-javascript.js!#title": [
-      "audits[unminified-javascript].title"
-    ],
-    "lighthouse-core/audits/byte-efficiency/unminified-javascript.js!#description": [
-      "audits[unminified-javascript].description"
-    ],
-    "lighthouse-core/lib/i18n.js!#displayValueByteSavings": [
-      {
-        "values": {
-          "wastedBytes": 30470
-        },
-        "path": "audits[unminified-javascript].displayValue"
-      },
-      {
-        "values": {
-          "wastedBytes": 8526
-        },
-        "path": "audits[uses-webp-images].displayValue"
-      },
-      {
-        "values": {
-          "wastedBytes": 64646
-        },
-        "path": "audits[uses-text-compression].displayValue"
-      }
-    ],
-    "lighthouse-core/lib/i18n.js!#columnWastedBytes": [
-      "audits[unminified-javascript].details.headings[2].label",
-      "audits[uses-webp-images].details.headings[3].label",
-      "audits[uses-text-compression].details.headings[2].label"
-    ],
-    "lighthouse-core/audits/byte-efficiency/unused-css-rules.js!#title": [
-      "audits[unused-css-rules].title"
-    ],
-    "lighthouse-core/audits/byte-efficiency/unused-css-rules.js!#description": [
-      "audits[unused-css-rules].description"
-    ],
-    "lighthouse-core/audits/byte-efficiency/uses-webp-images.js!#title": [
-      "audits[uses-webp-images].title"
-    ],
-    "lighthouse-core/audits/byte-efficiency/uses-webp-images.js!#description": [
-      "audits[uses-webp-images].description"
-    ],
-    "lighthouse-core/audits/byte-efficiency/uses-optimized-images.js!#title": [
-      "audits[uses-optimized-images].title"
-    ],
-    "lighthouse-core/audits/byte-efficiency/uses-optimized-images.js!#description": [
-      "audits[uses-optimized-images].description"
-    ],
-    "lighthouse-core/audits/byte-efficiency/uses-text-compression.js!#title": [
-      "audits[uses-text-compression].title"
-    ],
-    "lighthouse-core/audits/byte-efficiency/uses-text-compression.js!#description": [
-      "audits[uses-text-compression].description"
-    ],
-    "lighthouse-core/audits/byte-efficiency/uses-responsive-images.js!#title": [
-      "audits[uses-responsive-images].title"
-    ],
-    "lighthouse-core/audits/byte-efficiency/uses-responsive-images.js!#description": [
-      "audits[uses-responsive-images].description"
-    ],
-    "lighthouse-core/audits/byte-efficiency/efficient-animated-content.js!#title": [
-      "audits[efficient-animated-content].title"
-    ],
-    "lighthouse-core/audits/byte-efficiency/efficient-animated-content.js!#description": [
-      "audits[efficient-animated-content].description"
-    ],
-    "lighthouse-core/audits/dobetterweb/dom-size.js!#title": [
-      "audits[dom-size].title"
-    ],
-    "lighthouse-core/audits/dobetterweb/dom-size.js!#description": [
-      "audits[dom-size].description"
-    ],
-    "lighthouse-core/audits/dobetterweb/dom-size.js!#displayValue": [
-      {
-        "values": {
-          "itemCount": 53
-        },
-        "path": "audits[dom-size].displayValue"
-      }
-    ],
-    "lighthouse-core/audits/dobetterweb/dom-size.js!#columnDOMNodes": [
-      "audits[dom-size].details.headings[0].text"
-    ],
-    "lighthouse-core/audits/dobetterweb/dom-size.js!#columnDOMDepth": [
-      "audits[dom-size].details.headings[1].text"
-    ],
-    "lighthouse-core/audits/dobetterweb/dom-size.js!#columnDOMWidth": [
-      "audits[dom-size].details.headings[2].text"
-    ],
-    "lighthouse-core/config/default-config.js!#performanceCategoryTitle": [
-      "categories.performance.title"
-    ],
-    "lighthouse-core/config/default-config.js!#metricGroupTitle": [
-      "categoryGroups.metrics.title"
-    ],
-    "lighthouse-core/config/default-config.js!#loadOpportunitiesGroupTitle": [
-      "categoryGroups[load-opportunities].title"
-    ],
-    "lighthouse-core/config/default-config.js!#loadOpportunitiesGroupDescription": [
-      "categoryGroups[load-opportunities].description"
-    ],
-    "lighthouse-core/config/default-config.js!#diagnosticsGroupTitle": [
-      "categoryGroups.diagnostics.title"
-    ],
-    "lighthouse-core/config/default-config.js!#diagnosticsGroupDescription": [
-      "categoryGroups.diagnostics.description"
-    ]
+        {
+          "values": {
+            "wastedBytes": 64646
+          },
+          "path": "audits[uses-text-compression].displayValue"
+        }
+      ],
+      "lighthouse-core/lib/i18n.js | columnWastedBytes": [
+        "audits[unminified-javascript].details.headings[2].label",
+        "audits[uses-webp-images].details.headings[3].label",
+        "audits[uses-text-compression].details.headings[2].label"
+      ],
+      "lighthouse-core/audits/byte-efficiency/unused-css-rules.js | title": [
+        "audits[unused-css-rules].title"
+      ],
+      "lighthouse-core/audits/byte-efficiency/unused-css-rules.js | description": [
+        "audits[unused-css-rules].description"
+      ],
+      "lighthouse-core/audits/byte-efficiency/uses-webp-images.js | title": [
+        "audits[uses-webp-images].title"
+      ],
+      "lighthouse-core/audits/byte-efficiency/uses-webp-images.js | description": [
+        "audits[uses-webp-images].description"
+      ],
+      "lighthouse-core/audits/byte-efficiency/uses-optimized-images.js | title": [
+        "audits[uses-optimized-images].title"
+      ],
+      "lighthouse-core/audits/byte-efficiency/uses-optimized-images.js | description": [
+        "audits[uses-optimized-images].description"
+      ],
+      "lighthouse-core/audits/byte-efficiency/uses-text-compression.js | title": [
+        "audits[uses-text-compression].title"
+      ],
+      "lighthouse-core/audits/byte-efficiency/uses-text-compression.js | description": [
+        "audits[uses-text-compression].description"
+      ],
+      "lighthouse-core/audits/byte-efficiency/uses-responsive-images.js | title": [
+        "audits[uses-responsive-images].title"
+      ],
+      "lighthouse-core/audits/byte-efficiency/uses-responsive-images.js | description": [
+        "audits[uses-responsive-images].description"
+      ],
+      "lighthouse-core/audits/byte-efficiency/efficient-animated-content.js | title": [
+        "audits[efficient-animated-content].title"
+      ],
+      "lighthouse-core/audits/byte-efficiency/efficient-animated-content.js | description": [
+        "audits[efficient-animated-content].description"
+      ],
+      "lighthouse-core/audits/dobetterweb/dom-size.js | title": [
+        "audits[dom-size].title"
+      ],
+      "lighthouse-core/audits/dobetterweb/dom-size.js | description": [
+        "audits[dom-size].description"
+      ],
+      "lighthouse-core/audits/dobetterweb/dom-size.js | displayValue": [
+        {
+          "values": {
+            "itemCount": 53
+          },
+          "path": "audits[dom-size].displayValue"
+        }
+      ],
+      "lighthouse-core/audits/dobetterweb/dom-size.js | columnDOMNodes": [
+        "audits[dom-size].details.headings[0].text"
+      ],
+      "lighthouse-core/audits/dobetterweb/dom-size.js | columnDOMDepth": [
+        "audits[dom-size].details.headings[1].text"
+      ],
+      "lighthouse-core/audits/dobetterweb/dom-size.js | columnDOMWidth": [
+        "audits[dom-size].details.headings[2].text"
+      ],
+      "lighthouse-core/config/default-config.js | performanceCategoryTitle": [
+        "categories.performance.title"
+      ],
+      "lighthouse-core/config/default-config.js | metricGroupTitle": [
+        "categoryGroups.metrics.title"
+      ],
+      "lighthouse-core/config/default-config.js | loadOpportunitiesGroupTitle": [
+        "categoryGroups[load-opportunities].title"
+      ],
+      "lighthouse-core/config/default-config.js | loadOpportunitiesGroupDescription": [
+        "categoryGroups[load-opportunities].description"
+      ],
+      "lighthouse-core/config/default-config.js | diagnosticsGroupTitle": [
+        "categoryGroups.diagnostics.title"
+      ],
+      "lighthouse-core/config/default-config.js | diagnosticsGroupDescription": [
+        "categoryGroups.diagnostics.description"
+      ]
+    }
   }
 }

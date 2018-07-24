@@ -21,7 +21,7 @@ const UIStrings = {
     } found`,
 };
 
-const str_ = i18n.createStringFormatter(__filename, UIStrings);
+const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
 
 class CriticalRequestChains extends Audit {
   /**

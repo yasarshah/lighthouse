@@ -23,7 +23,7 @@ const UIStrings = {
     ' performance. Try auditing the page in incognito mode or from a clean Chrome profile.',
 };
 
-const str_ = i18n.createStringFormatter(__filename, UIStrings);
+const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
 
 class BootupTime extends Audit {
   /**

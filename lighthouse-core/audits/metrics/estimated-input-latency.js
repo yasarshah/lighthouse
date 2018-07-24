@@ -16,7 +16,7 @@ const UIStrings = {
       '[Learn more](https://developers.google.com/web/tools/lighthouse/audits/estimated-input-latency).',
 };
 
-const str_ = i18n.createStringFormatter(__filename, UIStrings);
+const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
 
 class EstimatedInputLatency extends Audit {
   /**

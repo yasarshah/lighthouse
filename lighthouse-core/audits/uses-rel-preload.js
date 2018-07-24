@@ -16,7 +16,7 @@ const UIStrings = {
     'resources sooner. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/preload).',
 };
 
-const str_ = i18n.createStringFormatter(__filename, UIStrings);
+const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
 
 const THRESHOLD_IN_MS = 100;
 

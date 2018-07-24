@@ -18,7 +18,7 @@ const UIStrings = {
     '[Learn more](https://developers.google.com/web/updates/2016/02/font-display).',
 };
 
-const str_ = i18n.createStringFormatter(__filename, UIStrings);
+const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
 
 class FontDisplay extends Audit {
   /**
