@@ -66,11 +66,13 @@ function _preprocessMessageValues(icuMessage, values) {
   const clonedValues = JSON.parse(JSON.stringify(values));
   const parsed = MessageParser.parse(icuMessage);
   // Throw an error if a message's value isn't provided
-  parsed.elements.map(el => el.id).filter(Boolean).forEach(valueId => {
-    if ((valueId in values) === false) {
-      throw new Error('ICU Message contains a value reference that wasn\'t provided');
-    }
-  });
+  parsed.elements
+    .filter(el => el.type === 'argumentElement')
+    .forEach(el => {
+      if ((el.id in values) === false) {
+        throw new Error('ICU Message contains a value reference that wasn\'t provided');
+      }
+    });
 
   // Round all milliseconds to the nearest 10
   parsed.elements
