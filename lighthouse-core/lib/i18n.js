@@ -69,7 +69,7 @@ function _preprocessMessageValues(icuMessage, values) {
   parsed.elements
     .filter(el => el.type === 'argumentElement')
     .forEach(el => {
-      if ((el.id in values) === false) {
+      if (el.id && (el.id in values) === false) {
         throw new Error('ICU Message contains a value reference that wasn\'t provided');
       }
     });
@@ -77,11 +77,13 @@ function _preprocessMessageValues(icuMessage, values) {
   // Round all milliseconds to the nearest 10
   parsed.elements
     .filter(el => el.format && el.format.style === 'milliseconds')
+    // @ts-ignore - el.id is always defined when el.format is defined
     .forEach(el => (clonedValues[el.id] = Math.round(clonedValues[el.id] / 10) * 10));
 
   // Replace all the bytes with KB
   parsed.elements
     .filter(el => el.format && el.format.style === 'bytes')
+    // @ts-ignore - el.id is always defined when el.format is defined
     .forEach(el => (clonedValues[el.id] = clonedValues[el.id] / 1024));
 
   return clonedValues;
