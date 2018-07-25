@@ -13,7 +13,7 @@ const path = require('path');
 const esprima = require('esprima');
 
 const LH_ROOT = path.join(__dirname, '../../../');
-const UISTRINGS_REGEX = /const UIStrings = (.|\s)*?\};\n/gim;
+const UISTRINGS_REGEX = /UIStrings = (.|\s)*?\};\n/gim;
 
 /**
  * @typedef ICUMessage
@@ -67,7 +67,7 @@ function collectAllStringsInDir(dir, strings = {}) {
         if (!exportVars.UIStrings) throw new Error('UIStrings defined but not exported');
 
         // @ts-ignore regex just matched
-        const justUIStrings = content.match(UISTRINGS_REGEX)[0];
+        const justUIStrings = 'const ' + content.match(UISTRINGS_REGEX)[0];
         // just parse the UIStrings substring to avoid ES version issues, save time, etc
         // @ts-ignore - esprima's type definition is supremely lacking
         const ast = esprima.parse(justUIStrings, {comment: true, range: true});
