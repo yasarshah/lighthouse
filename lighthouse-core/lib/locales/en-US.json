@@ -84,7 +84,7 @@
     "message": "A long cache lifetime can speed up repeat visits to your page. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/cache-policy)."
   },
   "lighthouse-core/audits/byte-efficiency/uses-long-cache-ttl.js | displayValue": {
-    "message": "{itemCount, plural,\n    one {1 resource found}\n    other {# resources found}\n    }"
+    "message": "{itemCount, plural,\n    =1 {1 resource found}\n    other {# resources found}\n    }"
   },
   "lighthouse-core/audits/byte-efficiency/uses-optimized-images.js | title": {
     "message": "Efficiently encode images"
@@ -117,7 +117,7 @@
     "message": "The Critical Request Chains below show you what resources are issued with a high priority. Consider reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/critical-request-chains)."
   },
   "lighthouse-core/audits/critical-request-chains.js | displayValue": {
-    "message": "{itemCount, plural,\n    one {1 chain found}\n    other {# chains found}\n    }"
+    "message": "{itemCount, plural,\n    =1 {1 chain found}\n    other {# chains found}\n    }"
   },
   "lighthouse-core/audits/dobetterweb/dom-size.js | title": {
     "message": "Avoids an excessive DOM size"
@@ -138,7 +138,7 @@
     "message": "Maximum Children"
   },
   "lighthouse-core/audits/dobetterweb/dom-size.js | displayValue": {
-    "message": "{itemCount, plural,\n    one {1 node}\n    other {# nodes}\n    }"
+    "message": "{itemCount, plural,\n    =1 {1 node}\n    other {# nodes}\n    }"
   },
   "lighthouse-core/audits/font-display.js | title": {
     "message": "All text remains visible during webfont loads"
@@ -219,7 +219,7 @@
     "message": "Consider instrumenting your app with the User Timing API to create custom, real-world measurements of key user experiences. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/user-timing)."
   },
   "lighthouse-core/audits/user-timings.js | displayValue": {
-    "message": "{itemCount, plural,\n    one {1 user timing}\n    other {# user timings}\n    }"
+    "message": "{itemCount, plural,\n    =1 {1 user timing}\n    other {# user timings}\n    }"
   },
   "lighthouse-core/audits/uses-rel-preconnect.js | title": {
     "message": "Avoid multiple, costly round trips to any origin"
@@ -277,5 +277,41 @@
   },
   "lighthouse-core/lib/i18n.js | columnTimeSpent": {
     "message": "Time Spent"
+  },
+  "lighthouse-core/report/html/renderer/util.js | varianceDisclaimer": {
+    "message": "Values are estimated and may vary."
+  },
+  "lighthouse-core/report/html/renderer/util.js | opportunityResourceColumnLabel": {
+    "message": "Resource to optimize"
+  },
+  "lighthouse-core/report/html/renderer/util.js | opportunitySavingsColumnLabel": {
+    "message": "Estimated Savings"
+  },
+  "lighthouse-core/report/html/renderer/util.js | errorMissingAuditInfo": {
+    "message": "Report error: no audit information"
+  },
+  "lighthouse-core/report/html/renderer/util.js | errorLabel": {
+    "message": "Error!"
+  },
+  "lighthouse-core/report/html/renderer/util.js | warningHeader": {
+    "message": "Warnings: "
+  },
+  "lighthouse-core/report/html/renderer/util.js | auditGroupExpandTooltip": {
+    "message": "Show audits"
+  },
+  "lighthouse-core/report/html/renderer/util.js | passedAuditsGroupTitle": {
+    "message": "Passed audits"
+  },
+  "lighthouse-core/report/html/renderer/util.js | notApplicableAuditsGroupTitle": {
+    "message": "Not applicable"
+  },
+  "lighthouse-core/report/html/renderer/util.js | manualAuditsGroupTitle": {
+    "message": "Additional items to manually check"
+  },
+  "lighthouse-core/report/html/renderer/util.js | toplevelWarningsMessage": {
+    "message": "There were issues affecting this run of Lighthouse:"
+  },
+  "lighthouse-core/report/html/renderer/util.js | scorescaleLabel": {
+    "message": "Score scale:"
   }
 }
