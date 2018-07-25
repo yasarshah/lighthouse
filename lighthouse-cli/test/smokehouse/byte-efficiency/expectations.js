@@ -94,6 +94,7 @@ module.exports = [
         },
       },
       'uses-responsive-images': {
+        displayValue: 'Potential savings of 75\xa0KB',
         details: {
           overallSavingsBytes: '>75000',
           items: [

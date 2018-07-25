@@ -14,7 +14,7 @@ const UIStrings = {
       'real-world measurements of key user experiences. ' +
       '[Learn more](https://developers.google.com/web/tools/lighthouse/audits/user-timing).',
   displayValue: `{itemCount, plural,
-    one {1 user timing}
+    =1 {1 user timing}
     other {# user timings}
     }`,
 };

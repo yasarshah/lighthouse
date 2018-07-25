@@ -16,7 +16,7 @@ const UIStrings = {
       'deferring the download of unnecessary resources to improve page load. ' +
       '[Learn more](https://developers.google.com/web/tools/lighthouse/audits/critical-request-chains).',
   displayValue: `{itemCount, plural,
-    one {1 chain found}
+    =1 {1 chain found}
     other {# chains found}
     }`,
 };

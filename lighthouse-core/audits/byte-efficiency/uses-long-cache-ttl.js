@@ -21,7 +21,7 @@ const UIStrings = {
     'A long cache lifetime can speed up repeat visits to your page. ' +
     '[Learn more](https://developers.google.com/web/tools/lighthouse/audits/cache-policy).',
   displayValue: `{itemCount, plural,
-    one {1 resource found}
+    =1 {1 resource found}
     other {# resources found}
     }`,
 };

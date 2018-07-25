@@ -33,7 +33,7 @@ const UIStrings = {
   columnDOMDepth: 'Maximum DOM Depth',
   columnDOMWidth: 'Maximum Children',
   displayValue: `{itemCount, plural,
-    one {1 node}
+    =1 {1 node}
     other {# nodes}
     }`,
 };
